@@ -1,0 +1,16 @@
+docker run --gpus all --rm -it -p 9000:9000 --name lgbm -v HOST_PATH:CONTAINER_PATH lightgbm-gpu
+
+# another terminal
+docker exec -it lgbm bash
+
+conda init bash
+
+# re-enter container
+
+conda activate py3
+
+cd CONTAINER_PATH
+
+pip install hyperopt pyyaml
+
+python lgbm.py
